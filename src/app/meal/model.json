@@ -1,0 +1,29 @@
+{
+  "title": "Meal",
+  "entity": "meal",
+  "api": {
+    "url": "http://localhost/php-crud-api/api.php/records/meal"
+  },
+  "filter": [
+    "name"
+  ],
+  "fields": [
+    {
+      "name": "id",
+      "label": "Id",
+      "isId": true,
+      "readonly": true,
+      "type": "number"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "label": "Name"
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "label": "Description"
+    }
+  ]
+}

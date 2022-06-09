@@ -1,0 +1,37 @@
+<ol class="breadcrumb float-right">
+  <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+  <li class="breadcrumb-item active">Country</li>
+</ol>
+<div class="card">
+  <div class="header">
+    <h2 class="title">Country Detail</h2>
+  </div>
+  <div class="content">
+    <div *ngIf="feedback.message" class="alert alert-{{feedback.type}}">{{ feedback.message }}</div>
+    <form *ngIf="country" #editForm="ngForm" (ngSubmit)="save()">
+    
+      <div class="form-group">
+        <label>Id</label>
+        {{country.id || 'n/a'}} 
+      </div>
+    
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input [(ngModel)]="country.name" id="name" name="name" class="form-control">
+      </div>
+    
+      <div class="form-group">
+        <label for="language">Language</label>
+        <input [(ngModel)]="country.language" id="language" name="language" class="form-control">
+      </div>
+    
+      <div class="form-group">
+        <label for="language_short">Stars</label>
+        <input [(ngModel)]="country.language_short" id="language_short" name="language_short" class="form-control">
+      </div>
+    
+      <button type="submit" class="btn btn-primary" [disabled]="!editForm.form.valid">Save</button>
+      <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+{
+  "title": "Nutrient",
+  "entity": "nutrient",
+  "api": {
+    "url": "http://localhost/php-crud-api/api.php/records/nutrient"
+  },
+  "filter": [
+    "name"
+  ],
+  "fields": [
+    {
+      "name": "id",
+      "label": "Id",
+      "isId": true,
+      "readonly": true,
+      "type": "number"
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "label": "Name"
+    },
+    {
+      "name": "description",
+      "type": "string",
+      "label": "Description",
+      "control": "text"
+    }
+  ]
+}
