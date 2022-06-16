@@ -1,0 +1,31 @@
+{
+  "title": "Country-Meal",
+  "entity": "countryMeal",
+  "api": {
+    "url": "http://localhost/php-crud-api/api.php/records/country_meal"
+  },
+  "filter": [
+    "name"
+  ],
+  "fields": [
+    {
+      "name": "id",
+      "label": "Id",
+      "isId": true,
+      "readonly": true,
+      "type": "number"
+    },
+    {
+      "name": "country_id",
+      "type": "number",
+      "label": "Country",
+      "control": "number"
+    },
+    {
+      "name": "meal_id",
+      "type": "number",
+      "label": "Meal",
+      "control": "number"
+    }
+  ]
+}

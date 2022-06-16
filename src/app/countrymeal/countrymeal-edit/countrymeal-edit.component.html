@@ -1,0 +1,41 @@
+<ol class="breadcrumb float-right">
+  <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+  <li class="breadcrumb-item active">Country-Meal</li>
+</ol>
+<div class="card">
+  <div class="header">
+    <h2 class="title">Country-Meal Detail</h2>
+  </div>
+  <div class="content">
+    <div *ngIf="feedback.message" class="alert alert-{{feedback.type}}">{{ feedback.message }}</div>
+    <form *ngIf="countrymeal" #editForm="ngForm" (ngSubmit)="save()">
+    
+      <div class="form-group">
+        <label>Id</label>
+        {{countrymeal.id || 'n/a'}} 
+      </div>
+    
+      <div class="form-group">
+        <label for="country_id">Country</label>
+        <!-- <input type="number" [(ngModel)]="countrymeal.country_id" id="country_id" name="country_id" class="form-control"> -->
+        <select [(ngModel)]="countrymeal.country_id" id="country_id" name="country_id" class="form-control">
+          <option *ngFor="let country of countries" [value]="country.id">
+            {{country.name}}
+          </option>
+        </select>
+      </div>
+    
+      <div class="form-group">
+        <label for="meal_id">Meal</label>
+        <select [(ngModel)]="countrymeal.meal_id" id="meal_id" name="meal_id" class="form-control">
+          <option *ngFor="let meal of meals" [value]="meal.id">
+            {{meal.name}}
+          </option>
+        </select>
+      </div>
+    
+      <button type="submit" class="btn btn-primary" [disabled]="!editForm.form.valid">Save</button>
+      <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+    </form>
+  </div>
+</div>

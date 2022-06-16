@@ -13,6 +13,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { CountryModule } from './country/country.module';
 import { NutrientModule } from './nutrient/nutrient.module';
 import { MealModule } from './meal/meal.module';
+import { CountryMealModule } from './countrymeal/countrymeal.module';
 
 @NgModule({
   imports: [
@@ -23,6 +24,7 @@ import { MealModule } from './meal/meal.module';
     CountryModule,
     NutrientModule,
     MealModule,
+    CountryMealModule,
   ],
   declarations: [
     AppComponent,
